@@ -25,7 +25,9 @@ class LoginActions extends StatelessWidget {
           child: Text(AppStrings.or, style: TextStyle(color: AppColors.whiteColor)),
         ),
         OutlinedButton(
-          onPressed: () {},
+          onPressed: () {
+           
+          },
           style: OutlinedButton.styleFrom(
             minimumSize: const Size(double.infinity, 56),
             side: const BorderSide(color: Colors.white),

@@ -22,6 +22,7 @@ class AuthRepo {
   Future<Either<String, void>> signUp({
     required String email,
     required String password,
+    required String username, 
   }) async {
     try {
       await client.auth.signUp(email: email, password: password);
