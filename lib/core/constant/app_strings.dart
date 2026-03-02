@@ -21,6 +21,10 @@ abstract class AppStrings {
   static const String usernameHint = "Username";
   static const String termsText = "I hereby agree to the terms of services and privacy policy";
   static const String alreadyHaveAccount = "Already have an account? Sign in";
+
+  // auth repo
+  static const String signInFailure = "wrong email or password";
+  static const String signUpFailure = "invalid email or password";
 }
 
 
