@@ -33,6 +33,7 @@ dependencies:
   dio: ^5.9.1
   flutter:
     sdk: flutter
+  flutter_bloc: ^9.1.1
   flutter_svg: ^2.2.3
   shared_preferences: ^2.5.4
   supabase_flutter: ^2.12.0
