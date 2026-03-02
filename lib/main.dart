@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:taalam/core/constant/app_strings.dart';
+import 'package:taalam/core/networking/supabase_services.dart';
 import 'package:taalam/features/auth/presentation/views/register_view.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SupabaseServices.init();
   runApp(const Taalam());
 }
 
