@@ -19,7 +19,7 @@ class LoginHeader extends StatelessWidget {
           child: const Icon(AppIcons.lockHeader, color: Colors.white, size: 40),
         ),
         const SizedBox(height: 30),
-        const Text(AppStrings.welcome, style: AppTextStyles.style28),
+        const Text(AppStrings.welcome, style: AppTextStyles.styleBold28),
         const SizedBox(height: 8),
         const Text(AppStrings.subtitle, style: AppTextStyles.style14),
       ],

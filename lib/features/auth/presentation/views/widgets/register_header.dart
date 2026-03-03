@@ -16,12 +16,20 @@ class RegisterHeader extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             border: Border.all(color: Colors.white12),
           ),
-          child: const Icon(AppIcons.groupHeader, color: Colors.white, size: 40),
+          child: const Icon(
+            AppIcons.groupHeader,
+            color: Colors.white,
+            size: 40,
+          ),
         ),
         const SizedBox(height: 30),
-        const Text(AppStrings.createAccount, style: AppTextStyles.style28),
+        const Text(AppStrings.createAccount, style: AppTextStyles.styleBold28),
         const SizedBox(height: 8),
-        const Text(AppStrings.subtitle, style: AppTextStyles.style14, textAlign: TextAlign.center),
+        const Text(
+          AppStrings.subtitle,
+          style: AppTextStyles.style14,
+          textAlign: TextAlign.center,
+        ),
       ],
     );
   }

@@ -1,5 +1,5 @@
+abstract class LayoutState {}
 
-abstract class LayoutNavBarState{}
+class InitialLayoutNavBarState extends LayoutState {}
 
-class InitialLayoutNavBarState extends LayoutNavBarState{}
-class ChangeLayoutNavBarState extends LayoutNavBarState{}
+class ChangeLayoutNavBarState extends LayoutState {}
