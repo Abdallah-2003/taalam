@@ -28,4 +28,11 @@ class AppTextStyles {
     fontWeight: FontWeight.bold,
     color: AppColors.whiteColor
   );
+
+  static const TextStyle styleBold18 =  TextStyle(
+    color: AppColors.whiteColor,
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+  );
+ 
 }

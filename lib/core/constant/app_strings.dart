@@ -33,6 +33,7 @@ abstract class AppStrings {
 
   // home view
   static const String searchHint = "Search here...";
+  static const String showDetails = "Show Details";
 }
 
 

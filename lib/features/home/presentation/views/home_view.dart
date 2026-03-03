@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taalam/core/constant/app_colors.dart';
+import 'package:taalam/features/home/presentation/views/widgets/courses_grid_view.dart';
 import 'package:taalam/features/home/presentation/views/widgets/home_header.dart';
 
 class HomeView extends StatelessWidget {
@@ -14,7 +15,9 @@ class HomeView extends StatelessWidget {
           children: [
             HomeHeader(
               userName: 'Abdullah',
-            )
+            ),
+            SizedBox(height: 20),
+            CoursesGridView()
           
           ],
         )
