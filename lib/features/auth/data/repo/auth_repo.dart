@@ -26,11 +26,31 @@ class AuthRepo {
   }) async {
     try {
       await client.auth.signUp(email: email, password: password);
+      await saveUserData(username: username, email: email);
       return const Right(null);
     } on AuthException catch (e) {
       return Left(AppStrings.signUpFailure);
     } catch (e) {
       return Left(e.toString());
+    }
+  }
+
+
+  Future<Either<String, void>> saveUserData({
+    required String username,
+    required String email,
+  }) async {
+    try {
+      await client.from('users').insert({
+        'id': Supabase.instance.client.auth.currentUser!.id,
+        'name': username,
+        'email': email,
+      });
+      return right(null);
+    } on AuthException catch(e) {
+      return  left(e.toString());
+    } catch(e) {
+      return left(e.toString());
     }
   }
 }
