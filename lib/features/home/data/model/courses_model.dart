@@ -2,7 +2,7 @@ class CoursesModel {
   final String id;
   final String title;
   final String desc;
-  final String price;
+  final num price;
   final String imageUrl;
 
 

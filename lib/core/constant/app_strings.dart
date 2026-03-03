@@ -34,6 +34,7 @@ abstract class AppStrings {
   // home view
   static const String searchHint = "Search here...";
   static const String showDetails = "Show Details";
+  static const String noCoursesFound = "No courses found";
 }
 
 
