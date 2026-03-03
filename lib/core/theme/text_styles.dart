@@ -22,4 +22,10 @@ class AppTextStyles {
     fontSize: 14,
     fontWeight: FontWeight.w500,
   );
+
+  static const TextStyle styleBold20 = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    color: AppColors.whiteColor
+  );
 }

@@ -19,51 +19,54 @@ class LayoutNavBar extends StatelessWidget {
           return Scaffold(
             body: context.read<LayoutCubit>().views[context.read<LayoutCubit>().currentIndex],
             bottomNavigationBar: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
+              color: AppColors.scaffoldBg,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.white.withValues(alpha: 0.15), 
+                      spreadRadius: 10,
+                      blurRadius: 20,
+                      offset: const Offset(0, -2),
+                    )
+                  ]
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.white.withValues(alpha: 0.15), 
-                    spreadRadius: 10,
-                    blurRadius: 20,
-                    offset: const Offset(0, -2),
-                  )
-                ]
-              ),
-              child: ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                ),
-                child: BottomNavigationBar(
-                  currentIndex: context.read<LayoutCubit>().currentIndex,
-                  onTap: (index) {
-                    context.read<LayoutCubit>().changeIndex(index);
-                  },
-                  items: [
-                    BottomNavigationBarItem(
-                      icon: Icon(AppIcons.home),
-                      label: AppStrings.home,
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(AppIcons.book),
-                      label: AppStrings.myCourses,
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(AppIcons.profile),
-                      label: AppStrings.profile,
-                    ),
-                  ],
-                  backgroundColor: AppColors.scaffoldBg,
-                  selectedItemColor: AppColors.primaryPurple,
-                  unselectedItemColor: AppColors.whiteColor,
-                  selectedLabelStyle: AppTextStyles.styleBold16,
-                  unselectedLabelStyle: AppTextStyles.styleMedium14,
-                  elevation: 0,
-                  type: BottomNavigationBarType.fixed,
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  ),
+                  child: BottomNavigationBar(
+                    currentIndex: context.read<LayoutCubit>().currentIndex,
+                    onTap: (index) {
+                      context.read<LayoutCubit>().changeIndex(index);
+                    },
+                    items: [
+                      BottomNavigationBarItem(
+                        icon: Icon(AppIcons.home),
+                        label: AppStrings.home,
+                      ),
+                      BottomNavigationBarItem(
+                        icon: Icon(AppIcons.book),
+                        label: AppStrings.myCourses,
+                      ),
+                      BottomNavigationBarItem(
+                        icon: Icon(AppIcons.profile),
+                        label: AppStrings.profile,
+                      ),
+                    ],
+                    backgroundColor: AppColors.scaffoldBg,
+                    selectedItemColor: AppColors.primaryPurple,
+                    unselectedItemColor: AppColors.whiteColor,
+                    selectedLabelStyle: AppTextStyles.styleBold16,
+                    unselectedLabelStyle: AppTextStyles.styleMedium14,
+                    elevation: 0,
+                    type: BottomNavigationBarType.fixed,
+                  ),
                 ),
               ),
             ),

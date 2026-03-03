@@ -10,6 +10,10 @@ abstract class AppIcons {
   static const IconData home = Icons.home;
   static const IconData book = Icons.book;
   static const IconData profile = Icons.person;
+  static const IconData menu = Icons.grid_view_rounded;
+  static const IconData cart = Icons.shopping_cart_outlined;
+  static const IconData search = Icons.search_outlined;
+  static const String wavingHand = "👋";
 
   
   

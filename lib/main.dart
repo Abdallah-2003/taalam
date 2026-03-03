@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:taalam/core/constant/app_colors.dart';
 import 'package:taalam/core/constant/app_strings.dart';
 import 'package:taalam/core/networking/supabase_services.dart';
-import 'package:taalam/features/auth/presentation/views/login_view.dart';
 import 'package:taalam/features/layout/presentation/views/layout_nav_bar.dart';
 
 void main() async {
@@ -16,6 +16,7 @@ class Taalam extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      color: AppColors.scaffoldBg,
       debugShowCheckedModeBanner: false,
       title: AppStrings.appName,
       home: const LayoutNavBar(),
