@@ -7,6 +7,10 @@ abstract class AppIcons {
   static const IconData user = Icons.person_outline;
   static const IconData email = Icons.email_outlined;
   static const IconData passwordHidden = Icons.visibility_off_outlined;
+  static const IconData home = Icons.home;
+  static const IconData book = Icons.book;
+  static const IconData profile = Icons.person;
+
   
   
 }

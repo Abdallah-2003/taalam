@@ -25,6 +25,11 @@ abstract class AppStrings {
   // auth repo
   static const String signInFailure = "wrong email or password";
   static const String signUpFailure = "invalid email or password";
+
+  // layout nav bar
+  static const String home = 'Home';
+  static const String myCourses = 'My courses';
+  static const String profile = 'Profile';
 }
 
 

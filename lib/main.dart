@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:taalam/core/constant/app_strings.dart';
 import 'package:taalam/core/networking/supabase_services.dart';
 import 'package:taalam/features/auth/presentation/views/login_view.dart';
+import 'package:taalam/features/layout/presentation/views/layout_nav_bar.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +18,7 @@ class Taalam extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: AppStrings.appName,
-      home: const LoginView(),
+      home: const LayoutNavBar(),
     );
   }
 }
