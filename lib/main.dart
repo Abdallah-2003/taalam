@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:taalam/core/constant/app_colors.dart';
 import 'package:taalam/core/constant/app_strings.dart';
 import 'package:taalam/core/networking/supabase_services.dart';
-import 'package:taalam/features/course_details/presentation/views/course_details_view.dart';
+import 'package:taalam/core/routing/app_router.dart';
+import 'package:taalam/core/routing/routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +20,8 @@ class Taalam extends StatelessWidget {
       color: AppColors.scaffoldBg,
       debugShowCheckedModeBanner: false,
       title: AppStrings.appName,
-      home: const CourseDetailsView(),
+      initialRoute: AppRoutes.layoutView,
+      onGenerateRoute: AppRouter.generateRoute,
     );
   }
 }
