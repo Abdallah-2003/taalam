@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:taalam/core/constant/app_colors.dart';
 import 'package:taalam/core/constant/app_strings.dart';
 import 'package:taalam/core/networking/supabase_services.dart';
-import 'package:taalam/features/layout/presentation/views/layout_nav_bar.dart';
+import 'package:taalam/features/course_details/presentation/views/course_details_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +19,7 @@ class Taalam extends StatelessWidget {
       color: AppColors.scaffoldBg,
       debugShowCheckedModeBanner: false,
       title: AppStrings.appName,
-      home: const LayoutNavBar(),
+      home: const CourseDetailsView(),
     );
   }
 }

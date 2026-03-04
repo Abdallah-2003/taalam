@@ -8,5 +8,7 @@ class AppColors {
   static const Color searchBarBg = Color(0xFF131132); 
   static const Color buttonBlue = Color(0xFF3B71D8);
   static const Color textDark = Color(0xFF1A2530);
+  static const Color priceGreen = Color(0xFF2ECA7F); 
+  static const Color textSecondary = Colors.white70;
 
 }

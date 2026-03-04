@@ -35,6 +35,11 @@ abstract class AppStrings {
   static const String searchHint = "Search here...";
   static const String showDetails = "Show Details";
   static const String noCoursesFound = "No courses found";
+
+  // course details view
+  static const String courseDetails = "Course Details";
+  static const String description = "Description";
+  static const String startCourse = "Start Course";
 }
 
 
