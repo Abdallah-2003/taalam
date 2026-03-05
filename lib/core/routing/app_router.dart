@@ -3,6 +3,7 @@ import 'package:taalam/core/routing/routes.dart';
 import 'package:taalam/features/auth/presentation/views/login_view.dart';
 import 'package:taalam/features/auth/presentation/views/register_view.dart';
 import 'package:taalam/features/course_details/presentation/views/course_details_view.dart';
+import 'package:taalam/features/home/data/model/courses_model.dart';
 import 'package:taalam/features/home/presentation/views/home_view.dart';
 import 'package:taalam/features/layout/presentation/views/layout_nav_bar.dart';
 
@@ -32,9 +33,10 @@ abstract class AppRouter {
         );
 
       case AppRoutes.courseDetailsView:
+      final coursesModel = settings.arguments as CoursesModel;
         return MaterialPageRoute(
           builder: (context) {
-            return const CourseDetailsView();
+            return  CourseDetailsView(coursesModel: coursesModel);
           },
         );
 

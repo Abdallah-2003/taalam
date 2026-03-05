@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:taalam/core/constant/app_colors.dart';
 import 'package:taalam/core/constant/app_strings.dart';
+import 'package:taalam/core/routing/routes.dart';
 import 'package:taalam/core/theme/text_styles.dart';
+import 'package:taalam/features/home/data/model/courses_model.dart';
 
 class CourseCard extends StatelessWidget {
   final String title;
   final String price;
   final String imageUrl;
+  final CoursesModel coursesModel;
 
   const CourseCard({
     super.key,
     required this.title,
     required this.price,
-    required this.imageUrl,
+    required this.imageUrl, 
+    required this.coursesModel,
   });
 
   @override
@@ -56,7 +60,9 @@ class CourseCard extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.courseDetailsView, arguments: coursesModel);
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primaryPurple,
                 shape: RoundedRectangleBorder(

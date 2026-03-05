@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:taalam/core/constant/app_colors.dart';
 import 'package:taalam/core/constant/app_strings.dart';
 import 'package:taalam/features/course_details/presentation/views/widgets/course_details_widget.dart';
+import 'package:taalam/features/home/data/model/courses_model.dart';
 
 
 class CourseDetailsView extends StatelessWidget {
-  const CourseDetailsView({super.key});
+  const CourseDetailsView({super.key, required this.coursesModel});
+
+  final CoursesModel coursesModel;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +32,7 @@ class CourseDetailsView extends StatelessWidget {
       ),
       body: Column(
         children: [
-          CourseDetailsWidget(),
+          CourseDetailsWidget(coursesModel: coursesModel),
 
           SafeArea(
             child: Padding(

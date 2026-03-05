@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:taalam/core/constant/app_colors.dart';
 import 'package:taalam/core/constant/app_strings.dart';
 import 'package:taalam/core/theme/text_styles.dart';
+import 'package:taalam/features/home/data/model/courses_model.dart';
 
 class CourseDetailsWidget extends StatelessWidget {
-  const CourseDetailsWidget({super.key});
+  const CourseDetailsWidget({super.key, required this.coursesModel});
+
+  final CoursesModel coursesModel;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +20,7 @@ class CourseDetailsWidget extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.network(
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvZwc8_YE0wb11CK3k1kO2Deh7ignAus8mQQ&s',
+                coursesModel.imageUrl,
                 width: double.infinity,
                 height: 220,
                 fit: BoxFit.cover,
@@ -35,12 +38,12 @@ class CourseDetailsWidget extends StatelessWidget {
             const SizedBox(height: 24),
 
             Text(
-              'Flutter Development Bootcamp',
+              coursesModel.title,
               style: AppTextStyles.styleNormal24,
             ),
             const SizedBox(height: 8),
 
-            Text('\$49.99', style: AppTextStyles.styleSemiBold20),
+            Text('\$${coursesModel.price}', style: AppTextStyles.styleSemiBold20),
             const SizedBox(height: 30),
 
            Text(
@@ -50,7 +53,7 @@ class CourseDetailsWidget extends StatelessWidget {
             const SizedBox(height: 12),
 
             Text(
-              'This is a comprehensive Flutter development bootcamp that will take you from zero to hero in building beautiful and performant mobile applications.',
+              coursesModel.desc,
               style: const TextStyle(
                 color: AppColors.textSecondary,
                 fontSize: 15,

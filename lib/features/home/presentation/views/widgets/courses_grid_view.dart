@@ -43,10 +43,12 @@ class CoursesGridView extends StatelessWidget {
                               childAspectRatio: 4 / 6,
                             ),
                         itemBuilder: (context, index) {
+                          var course = state.courses[index];
                           return CourseCard(
-                            title: state.courses[index].title,
-                            price: '\$${state.courses[index].price}',
-                            imageUrl: state.courses[index].imageUrl,
+                            title: course.title,
+                            price: '\$${course.price}',
+                            imageUrl: course.imageUrl,
+                            coursesModel: course,
                           );
                         },
                       ),
