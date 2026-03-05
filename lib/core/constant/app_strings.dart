@@ -39,7 +39,8 @@ abstract class AppStrings {
   // course details view
   static const String courseDetails = "Course Details";
   static const String description = "Description";
-  static const String startCourse = "Start Course";
+  static const String enrollCourse = "Enroll Course";
+  static const String enrollSuccess = "Enrollment Successful";
 }
 
 

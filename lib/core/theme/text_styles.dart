@@ -42,7 +42,7 @@ class AppTextStyles {
   );
 
   static const TextStyle styleSemiBold20 = TextStyle(
-    color: AppColors.priceGreen,
+    color: AppColors.green,
     fontSize: 20,
     fontWeight: FontWeight.w600,
   );

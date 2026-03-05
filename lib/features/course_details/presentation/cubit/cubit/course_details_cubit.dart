@@ -14,7 +14,7 @@ class CourseDetailsCubit extends Cubit<CourseDetailsState> {
     final result = await courseDetailsRepo.enrollCourse(courseId, userId);
     result.fold(
       (error) => emit(CourseDetailsFailure(error)),
-      (_) => emit(CourseDetailsSuccess()),
+      (message) => emit(CourseDetailsSuccess()),
     );
   }
 
