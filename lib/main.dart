@@ -23,7 +23,7 @@ class Taalam extends StatelessWidget {
       color: AppColors.scaffoldBg,
       debugShowCheckedModeBanner: false,
       title: AppStrings.appName,
-      initialRoute: AppRoutes.layoutView,
+      initialRoute: AppRoutes.myCoursesView,
       onGenerateRoute: AppRouter.generateRoute,
     );
   }

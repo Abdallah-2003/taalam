@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:taalam/core/constant/app_colors.dart';
 import 'package:taalam/features/home/presentation/views/home_view.dart';
 import 'package:taalam/features/layout/presentation/cubit/layout_cubit/layout_states.dart';
+import 'package:taalam/features/my_courses/presentation/views/my_courses_view.dart';
 
 class LayoutCubit extends Cubit<LayoutState> {
   LayoutCubit() : super(InitialLayoutNavBarState());
@@ -11,7 +11,7 @@ class LayoutCubit extends Cubit<LayoutState> {
 
   List<Widget> views = [
     HomeView(),
-    Container(color: Colors.yellow),
+    MyCoursesView(),
     Container(color: Colors.green),
   ];
 

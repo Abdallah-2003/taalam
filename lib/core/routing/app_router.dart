@@ -47,7 +47,12 @@ abstract class AppRouter {
           },
         );
 
-      
+      case AppRoutes.myCoursesView:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const LayoutNavBar(); 
+          },
+        );
 
       default:
         return MaterialPageRoute(

@@ -28,7 +28,7 @@ abstract class AppStrings {
 
   // layout nav bar
   static const String home = 'Home';
-  static const String myCourses = 'My courses';
+  static const String myCourses = 'My Courses';
   static const String profile = 'Profile';
 
   // home view
@@ -42,6 +42,9 @@ abstract class AppStrings {
   static const String enrollCourse = "Enroll Course";
   static const String enrolled = "Enrolled";
   static const String enrollSuccess = "Enrollment Successful";
+
+  // my courses view
+  static const String completeCourse = "complete course";
 }
 
 
