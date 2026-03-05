@@ -40,6 +40,7 @@ abstract class AppStrings {
   static const String courseDetails = "Course Details";
   static const String description = "Description";
   static const String enrollCourse = "Enroll Course";
+  static const String enrolled = "Enrolled";
   static const String enrollSuccess = "Enrollment Successful";
 }
 

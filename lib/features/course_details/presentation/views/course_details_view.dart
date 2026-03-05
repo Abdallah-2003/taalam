@@ -18,11 +18,15 @@ class CourseDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => CourseDetailsCubit(CourseDetailsRepo()),
+      create: (context) => CourseDetailsCubit(CourseDetailsRepo())..isEnrolled(coursesModel.id, Supabase.instance.client.auth.currentUser!.id),
       child: BlocConsumer<CourseDetailsCubit, CourseDetailsState>(
         listener: (context, state) {
           if (state is CourseDetailsFailure) {
-            snackBar(context: context, message: state.error, backgroundColor: AppColors.buttonBlue);
+            snackBar(
+              context: context,
+              message: state.error,
+              backgroundColor: AppColors.buttonBlue,
+            );
           }
           if (state is CourseDetailsSuccess) {
             snackBar(
@@ -69,10 +73,14 @@ class CourseDetailsView extends StatelessWidget {
                       height: 56,
                       child: ElevatedButton(
                         onPressed: () {
-                          context.read<CourseDetailsCubit>().enrollCourse(
-                            coursesModel.id,
-                            Supabase.instance.client.auth.currentUser!.id,
-                          );
+                          if (state is CourseDetailsInitial ||
+                              state is CourseDetailsFailure ||
+                              state is CourseDetailsNotEnrolled) {
+                            context.read<CourseDetailsCubit>().enrollCourse(
+                              coursesModel.id,
+                              Supabase.instance.client.auth.currentUser!.id,
+                            );
+                          }
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.primaryPurple,
@@ -87,6 +95,9 @@ class CourseDetailsView extends StatelessWidget {
                                 ),
                               )
                             : Text(
+                                state is CourseDetailsEnrolled || state is CourseDetailsSuccess
+                                    ? AppStrings.enrolled
+                                    :
                                 AppStrings.enrollCourse,
                                 style: AppTextStyles.styleBold18,
                               ),

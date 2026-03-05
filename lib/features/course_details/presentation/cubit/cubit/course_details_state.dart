@@ -14,3 +14,7 @@ final class CourseDetailsFailure extends CourseDetailsState {
 
 final class CourseDetailsSuccess extends CourseDetailsState {}
 
+final class CourseDetailsEnrolled extends CourseDetailsState {}
+final class CourseDetailsNotEnrolled extends CourseDetailsState {}
+
+
