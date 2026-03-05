@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:taalam/core/bloc_observer.dart';
 import 'package:taalam/core/constant/app_colors.dart';
 import 'package:taalam/core/constant/app_strings.dart';
 import 'package:taalam/core/networking/supabase_services.dart';
@@ -10,7 +8,6 @@ import 'package:taalam/core/routing/routes.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SupabaseServices.init();
-  Bloc.observer = SimpleBlocObserver();
   runApp(const Taalam());
 }
 

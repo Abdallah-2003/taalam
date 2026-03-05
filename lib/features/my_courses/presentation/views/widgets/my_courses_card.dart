@@ -3,16 +3,15 @@ import 'package:taalam/core/constant/app_colors.dart';
 import 'package:taalam/core/constant/app_icons.dart';
 import 'package:taalam/core/constant/app_strings.dart';
 import 'package:taalam/core/theme/text_styles.dart';
+import 'package:taalam/features/home/data/model/courses_model.dart';
 
 class MyCourseCard extends StatelessWidget {
-  final String title;
-  final String imageUrl;
+  final CoursesModel coursesModel;
   final VoidCallback onCompleteTap;
 
   const MyCourseCard({
     super.key,
-    required this.title,
-    required this.imageUrl,
+    required this.coursesModel,
     required this.onCompleteTap,
   });
 
@@ -37,7 +36,7 @@ class MyCourseCard extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Image.network(
-              imageUrl,
+              coursesModel.imageUrl,
               width: 130,
               height: 90,
               fit: BoxFit.cover,
@@ -57,7 +56,7 @@ class MyCourseCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  title,
+                  coursesModel.title,
                   style: AppTextStyles.styleBold16.copyWith(color: Colors.white),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,

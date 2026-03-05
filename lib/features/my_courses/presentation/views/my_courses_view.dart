@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:taalam/core/constant/app_colors.dart';
 import 'package:taalam/core/constant/app_strings.dart';
+import 'package:taalam/features/my_courses/data/repo/my_courses_repo.dart';
+import 'package:taalam/features/my_courses/presentation/cubit/my_courses_cubit/my_courses_cubit.dart';
 import 'package:taalam/features/my_courses/presentation/views/widgets/my_courses_card.dart';
 
 class MyCoursesView extends StatelessWidget {
@@ -8,33 +11,50 @@ class MyCoursesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.scaffoldBg,
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        centerTitle: true,
-        iconTheme: const IconThemeData(color: Colors.white),
-        title: const Text(
-          AppStrings.myCourses,
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w400),
-        ),
-      ),
-      body: ListView.builder(
-        padding: const EdgeInsets.all(20),
-        itemCount: 8,
-        itemBuilder: (context, index) {
-          return MyCourseCard(
-            title: index % 2 == 0 ? "nodejs course" : "Flutter course",
-            imageUrl:
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvZwc8_YE0wb11CK3k1kO2Deh7ignAus8mQQ&s",
-            onCompleteTap: () {},
+    return BlocProvider(
+      create: (context) => MyCoursesCubit(MyCoursesRepo())..fetchCourses(),
+      child: BlocConsumer<MyCoursesCubit, MyCoursesState>(
+        listener: (context, state) {},
+        builder: (context, state) {
+          return Scaffold(
+            backgroundColor: AppColors.scaffoldBg,
+            appBar: AppBar(
+              leading: IconButton(
+                icon: const Icon(Icons.arrow_back_ios),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              centerTitle: true,
+              iconTheme: const IconThemeData(color: Colors.white),
+              title: const Text(
+                AppStrings.myCourses,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            body: state is MyCoursesLoading
+                ? Center(child: CircularProgressIndicator())
+                : state is MyCoursesFailure
+                ? Center(child: Text(state.error))
+                : state is MyCoursesSuccess
+                ? state.courses.isEmpty
+                      ? Center(child: Text(AppStrings.noCoursesFound))
+                      : ListView.builder(
+                          padding: const EdgeInsets.all(20),
+                          itemCount: state.courses.length,
+                          itemBuilder: (context, index) {
+                            return MyCourseCard(
+                              coursesModel: state.courses[index],
+                              onCompleteTap: () {},
+                            );
+                          },
+                        )
+                : SizedBox(),
           );
         },
       ),

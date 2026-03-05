@@ -11,11 +11,12 @@ class MyCoursesRepo {
           .from('enrollment')
           .select('courses(*)')
           .eq('user_id', supabase.auth.currentUser!.id);
-
+      print(res);
       List<CoursesModel> courses = [];
       for (var course in res) {
-        courses.add(CoursesModel.fromJson(course));
+        courses.add(CoursesModel.fromJson(course['courses']));
       }
+      print(courses);
       return right(courses);
     } on Exception catch (e) {
       return left(e.toString());
