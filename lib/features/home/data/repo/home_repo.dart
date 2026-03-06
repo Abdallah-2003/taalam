@@ -19,4 +19,19 @@ class HomeRepo {
       return left(e.toString());
     }
   }
+
+  Future<Either<String, String>> fetchUserName() async {
+    try {
+      final userId = Supabase.instance.client.auth.currentUser!.id;
+      final response = await Supabase.instance.client
+          .from('users') 
+          .select('name')
+          .eq('id', userId)
+          .single();
+
+      return right(response['name'] as String);
+    } catch (e) {
+      return left(e.toString());
+    }
+  }
 }
