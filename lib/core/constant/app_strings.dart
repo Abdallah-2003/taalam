@@ -49,6 +49,9 @@ abstract class AppStrings {
   // video view
   static const String courseVideos = "Course Videos";
   static const String noVideosFound = "No videos found";
+
+  // video player view
+  static const String videoLoadingError = "Something went wrong while loading the video";
 }
 
 

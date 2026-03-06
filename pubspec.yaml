@@ -31,12 +31,14 @@ dependencies:
   cupertino_icons: ^1.0.8
   dartz: ^0.10.1
   dio: ^5.9.1
+  flick_video_player: ^0.9.0
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
   flutter_svg: ^2.2.3
   shared_preferences: ^2.5.4
   supabase_flutter: ^2.12.0
+  video_player: ^2.10.1
 
 dev_dependencies:
   flutter_lints: ^5.0.0
