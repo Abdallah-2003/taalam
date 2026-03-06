@@ -45,6 +45,9 @@ abstract class AppStrings {
 
   // my courses view
   static const String completeCourse = "complete course";
+
+  // video view
+  static const String courseVideos = "Course Videos";
 }
 
 

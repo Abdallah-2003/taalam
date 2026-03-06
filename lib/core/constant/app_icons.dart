@@ -14,6 +14,7 @@ abstract class AppIcons {
   static const IconData cart = Icons.shopping_cart_outlined;
   static const IconData search = Icons.search_outlined;
   static const IconData brokenImage = Icons.broken_image;
+  static const IconData play = Icons.play_arrow_rounded;
   static const String wavingHand = "👋";
 
 

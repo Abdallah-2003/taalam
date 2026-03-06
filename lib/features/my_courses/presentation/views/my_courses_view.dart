@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:taalam/core/constant/app_colors.dart';
 import 'package:taalam/core/constant/app_strings.dart';
+import 'package:taalam/core/routing/routes.dart';
 import 'package:taalam/features/my_courses/data/repo/my_courses_repo.dart';
 import 'package:taalam/features/my_courses/presentation/cubit/my_courses_cubit/my_courses_cubit.dart';
 import 'package:taalam/features/my_courses/presentation/views/widgets/my_courses_card.dart';
@@ -50,7 +51,9 @@ class MyCoursesView extends StatelessWidget {
                           itemBuilder: (context, index) {
                             return MyCourseCard(
                               coursesModel: state.courses[index],
-                              onCompleteTap: () {},
+                              onCompleteTap: () {
+                                Navigator.pushNamed(context, AppRoutes.videosView);
+                              },
                             );
                           },
                         )

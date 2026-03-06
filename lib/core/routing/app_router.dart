@@ -6,6 +6,7 @@ import 'package:taalam/features/course_details/presentation/views/course_details
 import 'package:taalam/features/home/data/model/courses_model.dart';
 import 'package:taalam/features/home/presentation/views/home_view.dart';
 import 'package:taalam/features/layout/presentation/views/layout_nav_bar.dart';
+import 'package:taalam/features/videos/presentation/views/videos_view.dart';
 
 
 abstract class AppRouter {
@@ -51,6 +52,13 @@ abstract class AppRouter {
         return MaterialPageRoute(
           builder: (context) {
             return const LayoutNavBar(); 
+          },
+        );
+
+      case AppRoutes.videosView:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const VideosView(); 
           },
         );
 
