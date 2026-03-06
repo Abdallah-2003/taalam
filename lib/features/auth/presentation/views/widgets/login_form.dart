@@ -6,6 +6,7 @@ import 'package:taalam/core/constant/app_colors.dart';
 import 'package:taalam/core/constant/app_icons.dart';
 import 'package:taalam/core/constant/app_images.dart';
 import 'package:taalam/core/constant/app_strings.dart';
+import 'package:taalam/core/routing/routes.dart';
 import 'package:taalam/features/auth/presentation/cubit/auth_cubit/auth_cubit.dart';
 import 'package:taalam/features/auth/presentation/views/widgets/custom_text_field.dart';
 
@@ -83,6 +84,7 @@ class _LoginFormState extends State<LoginForm> {
                 email: emailController.text.trim(),
                 password: passwordController.text.trim(),
               );
+              Navigator.pushNamed(context, AppRoutes.layoutView);
             }
           },
           style: ElevatedButton.styleFrom(

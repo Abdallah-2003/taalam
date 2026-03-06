@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:taalam/core/constant/app_colors.dart';
 import 'package:taalam/core/constant/app_icons.dart';
 import 'package:taalam/core/constant/app_strings.dart';
+import 'package:taalam/core/routing/routes.dart';
 import 'package:taalam/features/auth/presentation/cubit/auth_cubit/auth_cubit.dart';
 import 'package:taalam/features/auth/presentation/views/widgets/custom_text_field.dart';
 
@@ -87,6 +88,7 @@ class _RegisterFormState extends State<RegisterForm> {
                     password: passwordController.text.trim(),
                     username: usernameController.text.trim(),
                   );
+                  Navigator.pushNamed(context, AppRoutes.layoutView);
                 }
               },
               style: ElevatedButton.styleFrom(
