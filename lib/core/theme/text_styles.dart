@@ -46,4 +46,10 @@ class AppTextStyles {
     fontSize: 20,
     fontWeight: FontWeight.w600,
   );
+
+  static const TextStyle styleNormal16 = TextStyle(
+    color: Colors.grey,
+    fontSize: 16,
+    fontWeight: FontWeight.normal,
+  );
 }

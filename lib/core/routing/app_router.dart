@@ -56,9 +56,10 @@ abstract class AppRouter {
         );
 
       case AppRoutes.videosView:
+        final courseId = settings.arguments as String;
         return MaterialPageRoute(
           builder: (context) {
-            return const VideosView(); 
+            return VideosView(courseId: courseId); 
           },
         );
 

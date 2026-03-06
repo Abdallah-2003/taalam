@@ -52,7 +52,7 @@ class MyCoursesView extends StatelessWidget {
                             return MyCourseCard(
                               coursesModel: state.courses[index],
                               onCompleteTap: () {
-                                Navigator.pushNamed(context, AppRoutes.videosView);
+                                Navigator.pushNamed(context, AppRoutes.videosView, arguments: state.courses[index].id);
                               },
                             );
                           },

@@ -48,6 +48,7 @@ abstract class AppStrings {
 
   // video view
   static const String courseVideos = "Course Videos";
+  static const String noVideosFound = "No videos found";
 }
 
 
