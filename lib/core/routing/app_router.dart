@@ -6,6 +6,7 @@ import 'package:taalam/features/course_details/presentation/views/course_details
 import 'package:taalam/features/home/data/model/courses_model.dart';
 import 'package:taalam/features/home/presentation/views/home_view.dart';
 import 'package:taalam/features/layout/presentation/views/layout_nav_bar.dart';
+import 'package:taalam/features/profile/presentation/views/profile_view.dart';
 import 'package:taalam/features/videos/data/model/video_model.dart';
 import 'package:taalam/features/videos/presentation/views/video_player_view.dart';
 import 'package:taalam/features/videos/presentation/views/videos_view.dart';
@@ -70,6 +71,13 @@ abstract class AppRouter {
         return MaterialPageRoute(
           builder: (context) {
             return VideosView(courseId: courseId); 
+          },
+        );
+
+      case AppRoutes.profileView:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const ProfileView();
           },
         );
 

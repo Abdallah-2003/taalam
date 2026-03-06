@@ -7,5 +7,5 @@ abstract class AppRoutes {
   static const String myCoursesView = '/mycoursesview';
   static const String videosView = '/videosview';
   static const String videoPlayerView = '/videoplayerview';
-
+  static const String profileView = '/profileview';
 }
